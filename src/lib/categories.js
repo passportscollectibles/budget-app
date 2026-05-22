@@ -5,6 +5,7 @@ export const CATEGORIES = [
   'health',
   'entertainment',
   'utilities',
+  'travel',
   'other',
 ]
 
@@ -15,6 +16,7 @@ export const CATEGORY_COLORS = {
   health: '#10b981',
   entertainment: '#f59e0b',
   utilities: '#06b6d4',
+  travel: '#ec4899',
   other: '#6b7280',
 }
 
@@ -25,6 +27,7 @@ export const CATEGORY_LABELS = {
   health: 'Health',
   entertainment: 'Entertainment',
   utilities: 'Utilities',
+  travel: 'Travel',
   other: 'Other',
 }
 

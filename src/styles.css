@@ -138,6 +138,45 @@ th { color: var(--muted); font-weight: 500; font-size: 12px; text-transform: upp
 tr:hover td { background: rgba(255,255,255,0.02); }
 td input, td select { width: 100%; }
 
+/* Ensure native dropdown options are readable on the dark theme (Chrome/Edge). */
+.select option { background: var(--panel-2); color: var(--text); }
+
+/* Sortable column headers */
+th.sortable {
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+th.sortable:hover { color: var(--text); }
+.sortable-inner { display: inline-flex; align-items: center; gap: 6px; }
+th.sortable.text-right .sortable-inner { justify-content: flex-end; width: 100%; }
+.sort-arrow { font-size: 9px; opacity: 0.4; line-height: 1; }
+th.sortable.active { color: var(--accent); }
+th.sortable.active .sort-arrow { opacity: 1; color: var(--accent); }
+
+/* Category cell — colored swatch + wider select so all labels are visible */
+.cat-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 160px;
+}
+.cat-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+.cat-select {
+  flex: 1;
+  min-width: 130px;
+}
+@media (max-width: 600px) {
+  .cat-cell { min-width: 0; }
+  .cat-select { min-width: 110px; }
+}
+
 .tag {
   display: inline-block;
   padding: 2px 8px;

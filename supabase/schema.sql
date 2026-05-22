@@ -22,7 +22,7 @@ create table if not exists transactions (
   date date not null,
   description text not null,
   amount numeric(12,2) not null,
-  category text not null check (category in ('food','transport','shopping','health','entertainment','utilities','other')),
+  category text not null check (category in ('food','transport','shopping','health','entertainment','utilities','travel','other')),
   venmoed_back numeric(12,2) not null default 0,
   is_business boolean not null default false,
   account_id uuid references accounts(id) on delete set null,
@@ -36,6 +36,9 @@ create index if not exists transactions_account_id_idx on transactions (account_
 -- Migrations for transactions evolving from earlier schema:
 alter table transactions add column if not exists is_business boolean not null default false;
 alter table transactions add column if not exists account_id uuid references accounts(id) on delete set null;
+alter table transactions drop constraint if exists transactions_category_check;
+alter table transactions add constraint transactions_category_check
+  check (category in ('food','transport','shopping','health','entertainment','utilities','travel','other'));
 
 create table if not exists savings_goals (
   id uuid primary key default gen_random_uuid(),

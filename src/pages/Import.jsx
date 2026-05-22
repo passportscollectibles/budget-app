@@ -165,7 +165,7 @@ export default function Import() {
       <div className="card">
         <h3 style={{ marginTop: 0 }}>Paste JSON</h3>
         <p className="muted" style={{ marginTop: 0, fontSize: 13 }}>
-          Format: <code>{`[{"date":"YYYY-MM-DD","desc":"...","amount":n,"cat":"food|transport|shopping|health|entertainment|utilities|other","venmo":0,"is_business":false}]`}</code>
+          Format: <code>{`[{"date":"YYYY-MM-DD","desc":"...","amount":n,"cat":"${CATEGORIES.join('|')}","venmo":0,"is_business":false}]`}</code>
         </p>
         <p className="muted" style={{ marginTop: 4, fontSize: 12 }}>
           <code>is_business</code> is optional (defaults to <code>false</code>). Accepts <code>true/false</code>, <code>"yes"/"no"</code>, or <code>1/0</code>. The key <code>business</code> also works.

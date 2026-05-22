@@ -47,7 +47,7 @@ RLS policies in `schema.sql` require the request to come from an `authenticated`
 ]
 ```
 
-Categories: `food | transport | shopping | health | entertainment | utilities | other`
+Categories: `food | transport | shopping | health | entertainment | utilities | travel | other`
 
 `is_business` is optional (defaults to `false`). Accepts `true`/`false`, `"yes"`/`"no"`, or `1`/`0`. The shorter key `business` also works.
 
